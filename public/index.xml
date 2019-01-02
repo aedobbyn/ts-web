@@ -55,8 +55,8 @@
 
           &lt;p class=&#34;top-4 bottom-4&#34;&gt;The processed data comes in csv format and its compressed in gz. In R it can be used by using data.table without uncompressing it first,
             and you can also read it by using Python, Stata or almost any statistical software.&lt;/p&gt;
-
-          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Here is an example to read the data in R with a custom R function:&lt;/p&gt;
+  
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;We invite you to read our &lt;a href=&#34;https://tradestatistics.github.io/ts-documentation&#34; style=&#34;text-decoration: underline;&#34;&gt;documentation&lt;/a&gt;, but here is an R example function to read compressed data:&lt;/p&gt;
 
           &lt;div class=&#34;col-7 code-block&#34;&gt;
             &lt;img src=&#34;http://tradestatistics.io/site/site/img/data/buttons.svg&#34; style=&#34;width:54px;height:14px&#34; align=&#34;left&#34;&gt;
