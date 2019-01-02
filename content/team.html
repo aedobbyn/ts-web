@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Open Trade Statistics</title>
+    {{ partial "style-path.html" }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- this one is super important for mobile devices -->
+</head>
+
+<body>
+    {{ partial "header.html" . }}
+
+    <section id="team" class="team">
+        <div class="container top-12 bottom-12">
+            <div class="row center">
+                <div class="col-10">
+                    <h2>Meet our Team</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 col-offset-2 top-4">
+                    <p>Our core team includes ...</p>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-2 top-12">
+                    <img src="/img/github.svg" />
+                    <h5>Person X</h5>
+                    <span class="label staff"></span>
+                    <span class="label leadership"></span>
+                    <span class="label editor"></span>
+                </div>
+                <div class="col-2 top-12">
+                    <img src="/img/github.svg" />
+                    <h5>Person Y</h5>
+                    <span class="label staff"></span>
+                    <span class="label leadership"></span>
+                    <span class="label editor"></span>
+                </div>
+                <div class="col-2 top-12">
+                    <img src="/img/github.svg" />
+                    <h5>Person Z</h5>
+                    <span class="label staff"></span>
+                    <span class="label leadership"></span>
+                    <span class="label editor"></span>
+                </div>
+                <div class="col-2 top-12">
+                    <img src="/img/github.svg" />
+                    <h5>Person T</h5>
+                    <span class="label staff"></span>
+                    <span class="label leadership"></span>
+                    <span class="label editor"></span>
+                </div>
+            </div>
+        	</div>
+    </section>
+    <!-- /team -->
+    {{ partial "footer.html" . }}
+    <!-- jQuery and jQuery UI loading for easing -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script type="text/javascript">
+        $('.siema').slick({
+            infinite: true,
+            slidesToShow: 6,
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    </script>
+  <!-- initialize scroll click buttons functionality -->
+  <!-- Loads scroll-snap polyfill -->
+  <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/scroll-snap-polyfill.js"></script>
+</body>
+
+</html>

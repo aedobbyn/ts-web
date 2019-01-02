@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Open Trade Statistics</title>
+  {{ partial "style-path.html"}}<!-- stylesheet imports -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- this one is super important for mobile devices -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  {{ partial "ga.html" . }}
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+
+  <section class="hero">
+    <div class="middle-container top-10">
+      <div class="row center">
+        <div class="col-8 top-20">
+          <img src="img/logo-horizontal-white.svg" />
+        </div>
+        <div class="col-8 top-4">
+          <h3 style="color:white;">We care about transparent research practices</h3>
+        </div>
+      </div><!-- /row -->
+      <div class="row center bottom">
+        <a href="#about">
+          <div class="col-12">
+            <small>Learn more</small>
+            <div class="icon icon-caret-down"></div>
+          </div>
+        </a>
+      </div>
+    </div><!-- /container -->
+
+  </section><!-- /hero -->
+
+  {{ partial "about.html" . }}
+
+  {{ partial "data.html" . }}
+
+  {{ partial "contribute.html" . }}
+
+  {{ partial "footer.html" . }}
+
+  <script type="text/javascript" src="js/scrollanimate.js"></script>
+
+  </script>
+</body>
+
+</html>

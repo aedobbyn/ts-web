@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="generator" content="Hugo 0.40.1" />
+  <meta charset="utf-8" />
+  <title>Open Trade Statistics</title>
+  <link rel="stylesheet" type="text/css" href="/site/css/style-new.min.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="/site/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/site/favicon-16x16.png">
+<meta name="theme-color" content="#4b8add">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65764144-19', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</head>
+
+<body>
+  
+    
+    <div id="header">
+        <div class="container">
+            <div class="row center-m">
+                
+                <div class="col-3 top-2 bottom-2">
+                    <a href="/site/index.html" style="font-weight:bold;text-transform:uppercase;color:white;">Open Trade Statistics</a>
+                </div>
+                
+                
+                <nav class="col-5 col-offset-4 top-2 bottom-2">
+  <ul class="row between">
+    <li><a href="/site/index.html#about">About</a></li>
+    <li><a href="/site/index.html#data">Data</a></li>
+    <li><a href="/site/index.html#contribute">Contribute</a></li>
+    
+  </ul>
+</nav>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+  <section class="hero">
+    <div class="middle-container top-10">
+      <div class="row center">
+        <div class="col-8 top-20">
+          <img src="img/logo-horizontal-white.svg" />
+        </div>
+        <div class="col-8 top-4">
+          <h3 style="color:white;">We care about transparent research practices</h3>
+        </div>
+      </div>
+      <div class="row center bottom">
+        <a href="#about">
+          <div class="col-12">
+            <small>Learn more</small>
+            <div class="icon icon-caret-down"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="about">
+  <div class="container">
+    <div class="row center">
+      <div class="col-10 top-12">
+        <h2>About</h2>
+      </div>
+      <div class="col-8 top-4 bottom-12">
+        <p class="top-4 bottom-4">The Open Trade Statistics is an independent project that values reproducible research and
+        provides tidy trade data. At the moment we focus on commodities data.</p>
+        <p class="top-4 bottom-4">Our added value is that, unlike many other good trade data projects focused on visualization,
+          we put our effort on data processing, and our goal is to ease data analysis.</p>
+        <p class="top-4 bottom-4">We advocate for openness and collaboration, so our contribution is focused on:</p>
+        <h5 class="top-4">Releasing all of our scripts on GitHub</h5>
+        <h5>Releasing snapshots of the software we use</h5>
+        <h5>Sharing curated data (direct download and API)</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="data" class="darker-bg">
+  <div class="container">
+    <div class="row center">
+      <div class="col-10 top-12">
+        <h2>Data</h2>
+      </div>
+      <div class="col-8 top-4 bottom-12">
+        <p class="top-4 bottom-4">Our data source is <a href="http://comtrade.un.org/" style="text-decoration: underline;">UN Comtrade</a>, a United Nations database, that collects data as
+          reported by customs agencies.</p>
+        <p>Comtrade provides data organized under two great categorizations: The Standard International Trade Classification
+        (SITC) and the Harmonized System (HS). Each of these has different revisions, for example the HS introduced newer codes
+        since its release in 1992, in the years 1996, 2002, 2007 and 2012 (the latter not a part of the project at the present time).</p>
+        <p class="top-4 bottom-4">If you need to analyze exports growth for the period 1980-2000 at commodity level you'll have to convert the codes from
+        SITC rev 2 from/to HS 1992/96/+ or viceversa due to data availability, being SITC codes in use in the 80s but HS 1992 only since 1992.</p>
+        <p class="top-4 bottom-4">Here we provide consistent and complete data that we already converted to HS 2007, we used imports and exports data to
+        correct each other (i.e replace "false" missing or zero flows), and also we looked for countries that did not report under one
+        classification but used an older one while we did our best to keep data granularity to its finest level.</p>
+        <a class="button main" href="data/index.html">
+          Compressed Data
+        </a>
+        <br>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contribute">
+  <div class="container">
+    <div class="row center">
+      <div class="col-10 top-12">
+        <h2>Contribute</h2>
+      </div>
+      <div class="col-8 top-4 bottom-12">
+        <p class="top-4 bottom-4">Our work is made possible thanks to your support. Please visit us on GitHub to explore our code. Pull requests and new ideas are always welcome!</p>
+        <p class="top-4 bottom-4">You can also help us by donating via PayPal and help us with the hosting.</p>
+
+        <h5 class="top-4 bottom-4"> Follow us</h5>
+        <a class="button main" href="https://github.com/tradestatistics/">
+          GitHub
+        </a>
+        <br>
+        <a class="button main top-2" href="https://twitter.com/opentradestats">
+          Twitter
+        </a>
+
+        <h5 class="top-4 bottom-4"> Donate</h5>
+        <a class="button alt top-2" href="https://paypal.me/tradestatistics">
+          PayPal transfer
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+<div id="footer">
+  <div class="container">
+    
+    <div class="row start">
+      <div class="col-12 top-8 bottom-2">
+        <p>Open Trade Statistics, 2019</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 top-2 bottom-8 divider">
+        <p>
+          Except where otherwise noted, content on this site is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY license</a>.
+          This website is built with <a href="https://gohugo.io/">Hugo</a> and the theme is adapted from <a href="https://ropensci.org">ROpenSci</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="js/scrollanimate.js"></script>
+
+  </script>
+</body>
+
+</html>

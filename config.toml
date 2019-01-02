@@ -1,0 +1,15 @@
+baseurl = "http://tradestatistics.io/site/"
+# languageCode = "en-us"
+title = "Open Trade Statistics"
+theme = "ots"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
+
+paginate = 5
+paginatePath = "page"
+rssLimit = 20
+
+[params]
+    staff = [""]

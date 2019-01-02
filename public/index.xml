@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Trade Statistics</title>
+    <link>http://tradestatistics.io/site/</link>
+    <description>Recent content on Open Trade Statistics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+        <atom:link href="http://tradestatistics.io/site/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://tradestatistics.io/site/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://tradestatistics.io/site/data/</guid>
+      <description>
+        
+        &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;title&gt;Open Trade Statistics&lt;/title&gt;
+  {{ partial &#34;style-path.html&#34; }}
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+  &lt;!-- this one is super important for mobile devices --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  {{ partial &#34;header.html&#34; . }}
+
+  &lt;section id=&#34;data&#34; class=&#34;data&#34;&gt;
+    &lt;div id=&#34;license&#34; class=&#34;row center&#34;&gt;
+      &lt;div class=&#34;col-8 top-12 bottom-12&#34;&gt;
+        &lt;h3 class=&#34;top-4 bottom-4&#34;&gt;Code of Conduct&lt;/h3&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;Before you proceed to download the data please read this carefully.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;No matter about your gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices you are
+          able to use this data for academic research, divulgation or just out of curiosity.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;Commercial purposes are strictly out of the boundaries of what you can do with this data according to UN Comtrade dissemination clauses.
+          Our contents are distributed under Creative Commons Attribution-NonCommercial 4.0 International License.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;I&#39;m ok with the usage conditions explained here, on &lt;a href=&#34;https://comtrade.un.org/db/help/licenseagreement.aspx&#34; style=&#34;text-decoration: underline;&#34;&gt;UN Comtrade Online Usage Agreement&lt;/a&gt; and &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;
+            style=&#34;text-decoration: underline;&#34;&gt;Creative Commons BY-NC 4.0 License&lt;/a&gt; &lt;input type=&#34;checkbox&#34; name=&#34;agree-licenses&#34; onclick=&#34;showMe(&#39;processed-datasets&#39;)&#34;&gt;&lt;/p&gt;
+
+        &lt;div id=&#34;processed-datasets&#34; style=&#34;display:none&#34;&gt;
+          &lt;h3 class=&#34;top-12 bottom-4&#34;&gt;How to read the data&lt;/h3&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Pay attention to how your software is reading the data. The columns commodity_code and trade_value_usd must be read
+            as character and numeric (i.e. not as integer) respectively. Ignoring this will introduce null values in the data after you read it.&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;The processed data comes in csv format and its compressed in gz. In R it can be used by using data.table without uncompressing it first,
+            and you can also read it by using Python, Stata or almost any statistical software.&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Here is an example to read the data in R with a custom R function:&lt;/p&gt;
+
+          &lt;div class=&#34;col-7 code-block&#34;&gt;
+            &lt;img src=&#34;http://tradestatistics.io/site/site/img/data/buttons.svg&#34; style=&#34;width:54px;height:14px&#34; align=&#34;left&#34;&gt;
+            {{ partial &#34;fread2.html&#34; . }}
+          &lt;/div&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Note for Windows users: In order to read the data without uncompressing it first, you need to install zcat beforehand. The easiest option in our
+            opinion is to do that, and one possibility is to install &lt;a href=&#34;https://chocolatey.org/&#34; style=&#34;text-decoration: underline;&#34;&gt;Chocolatey&lt;/a&gt; first and then install the GNU Utilities
+            by running this command from Cmd or Power Shell as administrator:&lt;/p&gt;
+
+          &lt;div class=&#34;col-7 code-block&#34;&gt;
+            &lt;img src=&#34;http://tradestatistics.io/site/site/img/data/buttons.svg&#34; style=&#34;width:54px;height:14px&#34; align=&#34;left&#34;&gt;
+            {{ partial &#34;unxutils.html&#34; . }}
+          &lt;/div&gt;
+
+          &lt;h3 class=&#34;top-12 bottom-4&#34;&gt;Processed data&lt;/h3&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Raw data from UN Comtrade was updated on 2018-08-05&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Besides the data in the next table, you can download the &lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/md5sums&#34; style=&#34;text-decoration: underline;&#34;&gt;md5sums&lt;/a&gt; to check your downloaded files.
+          In addition, both the &lt;a href=&#34;https://tradestatistics.io/data/db-attributes/attributes_countries.csv.gz&#34; style=&#34;text-decoration: underline;&#34;&gt;countries&lt;/a&gt; and &lt;a href=&#34;https://tradestatistics.io/data/db-attributes/attributes_products.csv.gz&#34; style=&#34;text-decoration: underline;&#34;&gt;products&lt;/a&gt; metadata are also available.
+          &lt;/p&gt;
+
+          &lt;table cellspacing=&#34;0&#34; border=&#34;0&#34; class=&#34;table top-4 bottom-4&#34;&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;b&gt;Year&lt;/b&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;&lt;b&gt;Last updated&lt;/b&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;&lt;b&gt;File size (MB)&lt;/b&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;&lt;b&gt;md5sum&lt;/b&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1962.csv.gz&#34;&gt;1962&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;4.63&#34; sdnum=&#34;1033;&#34;&gt;4.63&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;fe4ef0e934e21e8f3cbd8a865582fed0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1963.csv.gz&#34;&gt;1963&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;5.62&#34; sdnum=&#34;1033;&#34;&gt;5.62&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;8f46fd6434cac60a16820135c1b27171&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1964.csv.gz&#34;&gt;1964&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;6.09&#34; sdnum=&#34;1033;&#34;&gt;6.09&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;abc10fda144060d93ba81ddbdcf463b0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1965.csv.gz&#34;&gt;1965&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;6.74&#34; sdnum=&#34;1033;&#34;&gt;6.74&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;8e8ff6d5d5880f95c8524cdc0f93c772&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1966.csv.gz&#34;&gt;1966&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;7.07&#34; sdnum=&#34;1033;&#34;&gt;7.07&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;4eed8ab0668955bc8cde19bb76370c17&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1967.csv.gz&#34;&gt;1967&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;7.34&#34; sdnum=&#34;1033;&#34;&gt;7.34&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;90b84b3bb646e6a8109aef94405692b7&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1968.csv.gz&#34;&gt;1968&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;7.59&#34; sdnum=&#34;1033;&#34;&gt;7.59&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;a9c7be389edd93b55b5852eccb8380e7&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1969.csv.gz&#34;&gt;1969&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;7.93&#34; sdnum=&#34;1033;&#34;&gt;7.93&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;1eab91f15bed38e98644d0dde2de7d1d&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1970.csv.gz&#34;&gt;1970&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;8.66&#34; sdnum=&#34;1033;&#34;&gt;8.66&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;fac0ca665a5c4809dd1644fe76467cc0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1971.csv.gz&#34;&gt;1971&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;8.91&#34; sdnum=&#34;1033;&#34;&gt;8.91&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;bc5997e59bf42abaa88e5120e52d7915&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1972.csv.gz&#34;&gt;1972&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;9.33&#34; sdnum=&#34;1033;&#34;&gt;9.33&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;27013206dbfe9df26d591db9d44a3ddb&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1973.csv.gz&#34;&gt;1973&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;9.97&#34; sdnum=&#34;1033;&#34;&gt;9.97&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;a3366055ff0db21eb6733bb870a4f989&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1974.csv.gz&#34;&gt;1974&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;10.73&#34; sdnum=&#34;1033;&#34;&gt;10.73&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;f3106d7807498daf8204b1add33b90e8&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1975.csv.gz&#34;&gt;1975&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;10.86&#34; sdnum=&#34;1033;&#34;&gt;10.86&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;93428c4dba529f62041ca5cc643dfd5a&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1976.csv.gz&#34;&gt;1976&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;11.17&#34; sdnum=&#34;1033;&#34;&gt;11.17&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;bb9e8f17e0f7c3402c9b3984f64afbc9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1977.csv.gz&#34;&gt;1977&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;11.91&#34; sdnum=&#34;1033;&#34;&gt;11.91&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;931c4a0ebcc45059ea5e959faed6955f&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1978.csv.gz&#34;&gt;1978&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;13.53&#34; sdnum=&#34;1033;&#34;&gt;13.53&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;83dea9584f2dd34ee0ff4c3efea909e3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1979.csv.gz&#34;&gt;1979&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;14.32&#34; sdnum=&#34;1033;&#34;&gt;14.32&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;abe65cb83c4eebc5aa784b6e36c5a8cc&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1980.csv.gz&#34;&gt;1980&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15&#34; sdnum=&#34;1033;&#34;&gt;15&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;d7e617858ae61ccfdab8d1302e7625a0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1981.csv.gz&#34;&gt;1981&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15.2&#34; sdnum=&#34;1033;&#34;&gt;15.2&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;fb75f922e7635e8fe51f9cde9ae526db&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1982.csv.gz&#34;&gt;1982&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15.11&#34; sdnum=&#34;1033;&#34;&gt;15.11&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;fbbb060515d933228ea15a05f7a347f1&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1983.csv.gz&#34;&gt;1983&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15.32&#34; sdnum=&#34;1033;&#34;&gt;15.32&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;64be98d7e1df9f5f32112a014b872aa6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1984.csv.gz&#34;&gt;1984&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15.22&#34; sdnum=&#34;1033;&#34;&gt;15.22&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;cba0e02f36b3d1542e42c56f63d93f92&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1985.csv.gz&#34;&gt;1985&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;15.81&#34; sdnum=&#34;1033;&#34;&gt;15.81&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;0ed4230d85c9d65f140fee17f0cf4d2b&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1986.csv.gz&#34;&gt;1986&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;16.47&#34; sdnum=&#34;1033;&#34;&gt;16.47&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;7ee30145a77d5a5b306dc7588ee3321b&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1987.csv.gz&#34;&gt;1987&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;16.99&#34; sdnum=&#34;1033;&#34;&gt;16.99&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;aeac6cc16f3fa6030ab733c14f1bbca6&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1988.csv.gz&#34;&gt;1988&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;17.72&#34; sdnum=&#34;1033;&#34;&gt;17.72&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;081405283656c17a2015b9dfbda88e38&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1989.csv.gz&#34;&gt;1989&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;18.56&#34; sdnum=&#34;1033;&#34;&gt;18.56&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;dfa4ecbc36f59da7d2f4c5ffd41c319f&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1990.csv.gz&#34;&gt;1990&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;19.35&#34; sdnum=&#34;1033;&#34;&gt;19.35&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;d53275b277c17c3b1bb6f5090bdb2396&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1991.csv.gz&#34;&gt;1991&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;19.5&#34; sdnum=&#34;1033;&#34;&gt;19.5&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;a8bfa1c3b1f710ec4f09ffdc222974a9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1992.csv.gz&#34;&gt;1992&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;28.34&#34; sdnum=&#34;1033;&#34;&gt;28.34&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;1ba98cc02fe7115de667ebe965fde9d3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1993.csv.gz&#34;&gt;1993&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;31.21&#34; sdnum=&#34;1033;&#34;&gt;31.21&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;a64e20ea6315b874e3abf1e505d9d4ef&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1994.csv.gz&#34;&gt;1994&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;36.16&#34; sdnum=&#34;1033;&#34;&gt;36.16&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;0c001c23b126041faedd2145a2fbece3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1995.csv.gz&#34;&gt;1995&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;38.7&#34; sdnum=&#34;1033;&#34;&gt;38.7&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;3d704dca88382549d49638541145b1d8&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1996.csv.gz&#34;&gt;1996&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;37.42&#34; sdnum=&#34;1033;&#34;&gt;37.42&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;640a4781dca7d72c1351e68da9624510&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1997.csv.gz&#34;&gt;1997&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;41.18&#34; sdnum=&#34;1033;&#34;&gt;41.18&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;1923577437e821b0d3b554866e580e7a&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1998.csv.gz&#34;&gt;1998&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;42.68&#34; sdnum=&#34;1033;&#34;&gt;42.68&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;076b2a59c22ebf5a443c8885cdc36e46&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-1999.csv.gz&#34;&gt;1999&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;44.92&#34; sdnum=&#34;1033;&#34;&gt;44.92&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;e54ee92df035a8854b82da92467e2924&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2000.csv.gz&#34;&gt;2000&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;53.14&#34; sdnum=&#34;1033;&#34;&gt;53.14&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;838e227598bef45edf26c7fc67928a2e&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2001.csv.gz&#34;&gt;2001&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;55.35&#34; sdnum=&#34;1033;&#34;&gt;55.35&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;5199fa28eead2c0bed17406b86f87b2e&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2002.csv.gz&#34;&gt;2002&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;52.58&#34; sdnum=&#34;1033;&#34;&gt;52.58&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;3b7f294511e23cb68d672727f009a1bf&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2003.csv.gz&#34;&gt;2003&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;56.13&#34; sdnum=&#34;1033;&#34;&gt;56.13&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;331df693ad8e6f41ed8ebc203608174c&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2004.csv.gz&#34;&gt;2004&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;60.24&#34; sdnum=&#34;1033;&#34;&gt;60.24&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;3abeab41ca43ba9ca31ae28c2921333c&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2005.csv.gz&#34;&gt;2005&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;64.08&#34; sdnum=&#34;1033;&#34;&gt;64.08&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;c5756fba651c77c51fcfcb6001758051&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2006.csv.gz&#34;&gt;2006&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;66.87&#34; sdnum=&#34;1033;&#34;&gt;66.87&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;114c2437e44ae2b9dec101dd20dfb3f0&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2007.csv.gz&#34;&gt;2007&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;63.35&#34; sdnum=&#34;1033;&#34;&gt;63.35&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;508dd5aa6ff6e258a802aec440b23796&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2008.csv.gz&#34;&gt;2008&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;68.58&#34; sdnum=&#34;1033;&#34;&gt;68.58&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;ae6776b2cf87b87183081becff19e1bd&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2009.csv.gz&#34;&gt;2009&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;70.02&#34; sdnum=&#34;1033;&#34;&gt;70.02&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;6b7a5a18ed54f4f69ef3c008c3d7d133&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2010.csv.gz&#34;&gt;2010&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;73.09&#34; sdnum=&#34;1033;&#34;&gt;73.09&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;6c75d3bb091f5793fddca89ae8340bd4&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2011.csv.gz&#34;&gt;2011&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;75.79&#34; sdnum=&#34;1033;&#34;&gt;75.79&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;bdb30bcc207deac28e43ac82c722dee1&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2012.csv.gz&#34;&gt;2012&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;78.09&#34; sdnum=&#34;1033;&#34;&gt;78.09&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;79a6ac790301b1ac3eb620c3212d1349&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2013.csv.gz&#34;&gt;2013&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;79.96&#34; sdnum=&#34;1033;&#34;&gt;79.96&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;0c83d0c5b3b948b9fe5c515578e3d9c9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2014.csv.gz&#34;&gt;2014&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;80.53&#34; sdnum=&#34;1033;&#34;&gt;80.53&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;caf52b85f77f980672b0563dd6aa4bc8&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2015.csv.gz&#34;&gt;2015&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;81.74&#34; sdnum=&#34;1033;&#34;&gt;81.74&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;cabfe9298918f37a1f51c9968a5d4cd9&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; height=&#34;17&#34; align=&#34;left&#34;&gt;&lt;a href=&#34;https://tradestatistics.io/data/04-unified-data/hs-rev2007/hs-rev2007-2016.csv.gz&#34;&gt;2016&lt;/a&gt;&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;43434&#34; sdnum=&#34;1033;0;YYYY-MM-DD&#34;&gt;2018-11-30&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;right&#34; sdval=&#34;82.1&#34; sdnum=&#34;1033;&#34;&gt;82.1&lt;/td&gt;
+              &lt;td style=&#34;border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000&#34; align=&#34;left&#34;&gt;94c1f82955e11abb77adddc4f5c44203&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;!-- /team --&gt;
+  {{ partial &#34;footer.html&#34; . }}
+  &lt;!-- jQuery and jQuery UI loading for easing --&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-1.11.0.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-migrate-1.2.1.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;http://tradestatistics.io/site/js/slick.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34;&gt;
+    $(&#39;.siema&#39;).slick({
+      infinite: true,
+      slidesToShow: 6,
+      autoplay: true,
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  &lt;/script&gt;
+  &lt;!-- initialize scroll click buttons functionality --&gt;
+  &lt;!-- Loads scroll-snap polyfill --&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/scroll-snap-polyfill.js&#34;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    function showMe(box) {
+      var chboxs = document.getElementsByName(&#34;agree-licenses&#34;);
+      var vis = &#34;none&#34;;
+      for (var i = 0; i &lt; chboxs.length; i++) {
+        if (chboxs[i].checked) {
+          vis = &#34;block&#34;;
+          break;
+        }
+      }
+      document.getElementById(box).style.display = vis;
+    };
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://tradestatistics.io/site/data2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://tradestatistics.io/site/data2/</guid>
+      <description>
+        
+        &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;title&gt;Open Trade Statistics&lt;/title&gt;
+  {{ partial &#34;style-path.html&#34; }}
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+  &lt;!-- this one is super important for mobile devices --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  {{ partial &#34;header.html&#34; . }}
+
+  &lt;section id=&#34;data&#34; class=&#34;data&#34;&gt;
+    &lt;div id=&#34;license&#34; class=&#34;row center&#34;&gt;
+      &lt;div class=&#34;col-8 top-12 bottom-12&#34;&gt;
+        &lt;h3 class=&#34;top-4 bottom-4&#34;&gt;Code of Conduct&lt;/h3&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;Before you proceed to download the data please read this carefully.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;No matter about your gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices you are
+          able to use this data for academic research, divulgation or just out of curiosity.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;Commercial purposes are strictly out of the boundaries of what you can do with this data according to UN Comtrade dissemination clauses.
+          Our contents are distributed under Creative Commons Attribution-NonCommercial 4.0 International License.&lt;/p&gt;
+
+        &lt;p class=&#34;top-4 bottom-4&#34;&gt;I&#39;m ok with the usage conditions explained here, on &lt;a href=&#34;https://comtrade.un.org/db/help/licenseagreement.aspx&#34; style=&#34;text-decoration: underline;&#34;&gt;UN Comtrade Online Usage Agreement&lt;/a&gt; and &lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;
+            style=&#34;text-decoration: underline;&#34;&gt;Creative Commons BY-NC 4.0 License&lt;/a&gt; &lt;input type=&#34;checkbox&#34; name=&#34;agree-licenses&#34; onclick=&#34;showMe(&#39;api&#39;)&#34;&gt;&lt;/p&gt;
+
+        &lt;div id=&#34;api&#34; style=&#34;display:none&#34;&gt;
+          &lt;h3 class=&#34;top-12 bottom-4&#34;&gt;Use the API&lt;/h3&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Raw data from UN Comtrade was updated on 2018-08-05&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Processed datasets were updated on 2018-12-01&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Using our API is straightforward. No limits, no speed restrictions. Just be nice.&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;To use the api you can access it by using your browser or a software such as RStudio.&lt;/p&gt;
+
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Visit &lt;a href=&#34;https://api.tradestatistics.io/&#34; style=&#34;text-decoration: underline;&#34;&gt;api.tradestatistics.io&lt;/a&gt; and type a valid query&lt;/p&gt;
+
+          &lt;h5 class=&#34;top-4&#34;&gt;Simple example&lt;/h5&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Visit &lt;a href=&#34;https://api.tradestatistics.io/friend&#34; style=&#34;text-decoration: underline;&#34;&gt;api.tradestatistics.io/friend&lt;/a&gt; and &lt;a href=&#34;https://api.tradestatistics.io/me&#34; style=&#34;text-decoration: underline;&#34;&gt;api.tradestatistics.io/me&lt;/a&gt;&lt;/p&gt;
+
+          &lt;h5 class=&#34;top-4&#34;&gt;Adecuate example&lt;/h5&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;Read the JSON data from the API and convert it to a table with R:&lt;/p&gt;
+          &lt;div class=&#34;col-7 code-block&#34;&gt;
+            &lt;img src=&#34;http://tradestatistics.io/site/site/img/data/buttons.svg&#34; style=&#34;width:54px;height:14px&#34; align=&#34;left&#34;&gt;
+            {{ partial &#34;api_example.html&#34; . }}
+          &lt;/div&gt;
+
+          &lt;h5 class=&#34;top-4&#34;&gt;All the details about the API&lt;/h5&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;You should probably start by inspecting &lt;a href=&#34;https://api.tradestatistics.io/countries&#34; style=&#34;text-decoration: underline;&#34;&gt;api.tradestatistics.io/countries&lt;/a&gt;&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;The tables we provide at the moment are:&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;tt&gt;countries&lt;/tt&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;products&lt;/tt&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;reporters&lt;/tt&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;rankings&lt;/tt&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;yc&lt;/tt&gt; (Year - Commodity)&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;yr&lt;/tt&gt; (Year - Reporter)&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;yrc&lt;/tt&gt; (Year - Reporter - Commodity)&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;yrp&lt;/tt&gt; (Year - Reporter - Partner)&lt;/li&gt;
+            &lt;li&gt;&lt;tt&gt;yrpc&lt;/tt&gt; (Year - Reporter - Partner - Commodity)&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;&lt;tt&gt;countries&lt;/tt&gt; returns the details associated to a country code such as country full name and continent.&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;&lt;tt&gt;products&lt;/tt&gt; returns the details associated to a product code such as product full name and product group.&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;&lt;tt&gt;reporters&lt;/tt&gt; by default returns the iso code of all reporting countries in 2016, use &lt;tt&gt;reporters?y=2010&lt;/tt&gt; or any value between 1962 and 2016 for a different year.&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;&lt;tt&gt;rankings&lt;/tt&gt; works in the same way as &lt;tt&gt;reporters&lt;/tt&gt;.&lt;/p&gt;
+          &lt;p class=&#34;top-4 bottom-4&#34;&gt;&lt;tt&gt;y*&lt;/tt&gt; tables return information about countries and products, and they can be subsetted by year,
+            reporter or partner. These tables requiere specific parameters such as &lt;tt&gt;yrpc?y=2016&amp;r=chl&amp;p=arg&lt;/tt&gt; provided these queries have no default values.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;!-- /team --&gt;
+  {{ partial &#34;footer.html&#34; . }}
+  &lt;!-- jQuery and jQuery UI loading for easing --&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-1.11.0.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-migrate-1.2.1.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;http://tradestatistics.io/site/js/slick.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34;&gt;
+    $(&#39;.siema&#39;).slick({
+      infinite: true,
+      slidesToShow: 6,
+      autoplay: true,
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  &lt;/script&gt;
+  &lt;!-- initialize scroll click buttons functionality --&gt;
+  &lt;!-- Loads scroll-snap polyfill --&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/scroll-snap-polyfill.js&#34;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    function showMe(box) {
+      var chboxs = document.getElementsByName(&#34;agree-licenses&#34;);
+      var vis = &#34;none&#34;;
+      for (var i = 0; i &lt; chboxs.length; i++) {
+        if (chboxs[i].checked) {
+          vis = &#34;block&#34;;
+          break;
+        }
+      }
+      document.getElementById(box).style.display = vis;
+    };
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://tradestatistics.io/site/donate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://tradestatistics.io/site/donate/</guid>
+      <description>
+        
+        &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;rOpenSci | Package Use Cases&lt;/title&gt;
+    {{ partial &#34;style-path.html&#34; }}
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;&lt;!-- this one is super important for mobile devices --&gt;
+    {{ partial &#34;ga.html&#34; . }}
+&lt;/head&gt;
+&lt;body&gt;
+{{ partial &#34;header.html&#34; . }}
+
+
+&lt;!-- begins donate section --&gt;
+    &lt;section class=&#34;donateonline&#34;&gt;
+        &lt;div class=&#34;container&#34;&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-8 top-20&#34;&gt;
+                    &lt;h2&gt;Make your Donation&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-3 top-4&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/donate.svg&#34; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-8 top-4&#34;&gt;
+                    Under a fiscal sponsorship agreement with &lt;a href=&#34;https://www.numfocus.org/&#34; target=&#34;_blank&#34;&gt;NumFOCUS&lt;/a&gt;, a 501(c)3 nonprofit that supports and promotes world-class, innovative, open source scientific computing, we are able to accept donations from individuals, institutions, and corporations to support our activities. Contributions from US based individuals and organizations are tax deductible. If you would like to support our activities, we are able to accept contributions in a variety of forms including FlipCause and BitCoin.
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-2 top-6 bottom-20&#34;&gt;
+                    &lt;a class=&#34;button main&#34; href=&#34;https://www.flipcause.com/widget/widget_home/MjI2MQ==&#34;&gt;Donate now&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;!-- ends donateonline --&gt;
+
+&lt;!-- begins receiving checks section --&gt;
+    &lt;section class=&#34;checks&#34;&gt;
+        &lt;div class=&#34;container&#34;&gt;
+            &lt;div class=&#34;row&#34;&gt;
+                &lt;div class=&#34;col-1 col-offset-2 top-12&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/check.svg&#34; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row&#34;&gt;
+                &lt;div class=&#34;col-4 col-offset-2 top-4&#34;&gt;
+                    &lt;h4&gt;We also take checks&lt;/h4&gt;
+                    &lt;p&gt;Checks can also be made out to NumFOCUS, just make sure to &lt;strong&gt;add rOpenSci in the memo line&lt;/strong&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row&#34;&gt;
+                &lt;div class=&#34;col-4 col-offset-2 top-4 bottom-12&#34;&gt;
+                    &lt;p&gt;&lt;strong&gt;NumFOCUS&lt;/strong&gt;&lt;/p&gt;
+                    &lt;p&gt; P.O. Box 90596 &lt;br/&gt;
+                        Austin, TX 78709 &lt;br/&gt;
+                        USA
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;!-- /checks --&gt;
+
+  {{ partial &#34;footer.html&#34; . }}
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://tradestatistics.io/site/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://tradestatistics.io/site/team/</guid>
+      <description>
+        
+        &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34; /&gt;
+    &lt;title&gt;Open Trade Statistics&lt;/title&gt;
+    {{ partial &#34;style-path.html&#34; }}
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+    &lt;!-- this one is super important for mobile devices --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    {{ partial &#34;header.html&#34; . }}
+
+    &lt;section id=&#34;team&#34; class=&#34;team&#34;&gt;
+        &lt;div class=&#34;container top-12 bottom-12&#34;&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-10&#34;&gt;
+                    &lt;h2&gt;Meet our Team&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row&#34;&gt;
+                &lt;div class=&#34;col-8 col-offset-2 top-4&#34;&gt;
+                    &lt;p&gt;Our core team includes ...&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;row center&#34;&gt;
+                &lt;div class=&#34;col-2 top-12&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/github.svg&#34; /&gt;
+                    &lt;h5&gt;Person X&lt;/h5&gt;
+                    &lt;span class=&#34;label staff&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label leadership&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label editor&#34;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;col-2 top-12&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/github.svg&#34; /&gt;
+                    &lt;h5&gt;Person Y&lt;/h5&gt;
+                    &lt;span class=&#34;label staff&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label leadership&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label editor&#34;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;col-2 top-12&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/github.svg&#34; /&gt;
+                    &lt;h5&gt;Person Z&lt;/h5&gt;
+                    &lt;span class=&#34;label staff&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label leadership&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label editor&#34;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;col-2 top-12&#34;&gt;
+                    &lt;img src=&#34;http://tradestatistics.io/site/img/github.svg&#34; /&gt;
+                    &lt;h5&gt;Person T&lt;/h5&gt;
+                    &lt;span class=&#34;label staff&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label leadership&#34;&gt;&lt;/span&gt;
+                    &lt;span class=&#34;label editor&#34;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        	&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- /team --&gt;
+    {{ partial &#34;footer.html&#34; . }}
+    &lt;!-- jQuery and jQuery UI loading for easing --&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-1.11.0.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;//code.jquery.com/jquery-migrate-1.2.1.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;http://tradestatistics.io/site/js/slick.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script type=&#34;text/javascript&#34;&gt;
+        $(&#39;.siema&#39;).slick({
+            infinite: true,
+            slidesToShow: 6,
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    &lt;/script&gt;
+  &lt;!-- initialize scroll click buttons functionality --&gt;
+  &lt;!-- Loads scroll-snap polyfill --&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/scroll-snap-polyfill.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
