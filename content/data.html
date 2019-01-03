@@ -17,26 +17,26 @@
       <div class="col-8 top-12 bottom-12">
         <h3 class="top-4 bottom-4">Code of Conduct</h3>
 
-        <p class="top-4 bottom-4">Before you proceed to download the data please read this carefully.</p>
+        <p class="top-4 bottom-4">Before you proceed to download the data, please read this carefully.</p>
 
         <p class="top-4 bottom-4">No matter about your gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices you are
-          able to use this data for academic research, divulgation or just out of curiosity.</p>
+          able to use this data for any purpose, including academic.</p>
 
         <p class="top-4 bottom-4">Commercial purposes are strictly out of the boundaries of what you can do with this data according to UN Comtrade dissemination clauses.
           Our contents are distributed under Creative Commons Attribution-NonCommercial 4.0 International License.</p>
 
-        <p class="top-4 bottom-4">I'm ok with the usage conditions explained here, on <a href="https://comtrade.un.org/db/help/licenseagreement.aspx" style="text-decoration: underline;">UN Comtrade Online Usage Agreement</a> and <a href="https://creativecommons.org/licenses/by-nc/4.0/"
+        <p class="top-4 bottom-4">I agree to the usage conditions explained here, on <a href="https://comtrade.un.org/db/help/licenseagreement.aspx" style="text-decoration: underline;">UN Comtrade Online Usage Agreement</a> and <a href="https://creativecommons.org/licenses/by-nc/4.0/"
             style="text-decoration: underline;">Creative Commons BY-NC 4.0 License</a> <input type="checkbox" name="agree-licenses" onclick="showMe('processed-datasets')"></p>
 
         <div id="processed-datasets" style="display:none">
           <h3 class="top-12 bottom-4">How to read the data</h3>
 
-          <p class="top-4 bottom-4">Pay attention to how your software is reading the data. The columns commodity_code and trade_value_usd must be read
-            as character and numeric (i.e. not as integer) respectively. Ignoring this will introduce null values in the data after you read it.</p>
+          <p class="top-4 bottom-4">Pay attention to how your software is reading the data. The columns commodity_code and trade_value_usd, respectively, must be read
+            as character and numeric (i.e. not as integer). Ignoring this will introduce null values in the data after you read it.</p>
 
-          <p class="top-4 bottom-4">The processed data comes in csv format and its compressed in gz. In R it can be used by using data.table without uncompressing it first,
+          <p class="top-4 bottom-4">The processed data comes in CSV format and its compressed in gz. In R it can be used by using data.table without uncompressing it first,
             and you can also read it by using Python, Stata or almost any statistical software.</p>
-  
+
           <p class="top-4 bottom-4">We invite you to read our <a href="https://tradestatistics.github.io/ts-documentation" style="text-decoration: underline;">documentation</a>, but here is an R example function to read compressed data:</p>
 
           <div class="col-7 code-block">
